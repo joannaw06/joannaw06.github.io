@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Joanna Wang</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'light-bg': '#dcd3c4',       
+                        'light-text': '#2c2c2c',     
+                        'light-accent': '#007bff', 
+                        'light-placeholder': '#a0a0a0', 
+                        'light-border': '#cccccc',   
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="contact-page">
+    <nav class="navbar">
+        <button id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="start-up.html">START-UP</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+<main>
+    <div class="container max-w-6xl mx-auto px-6 lg:px-10">
+
+        <header class="flex justify-between items-center py-16 border-b border-light-border mb-12">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight max-w-4xl">Let's start a project together</h1>
+            <div class="profile-pic flex-shrink-0">
+                <img src="https://placehold.co/60x60/cccccc/2c2c2c?text=JW" alt="Profile Picture" class="w-16 h-16 rounded-full object-cover">
+            </div>
+        </header>
+
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 pb-20">
+
+            <div class="form-section lg:col-span-2">
+                
+                <div id="form-success" style="display: none;">
+                    <h2 class="text-3xl font-bold text-green-700">Thank you!</h2>
+                    <p class="text-xl text-light-text mt-4">Your message has been sent successfully. I'll get back to you soon.</p>
+                </div>
+
+                <form id="contactForm" action="#" method="POST" class="space-y-10">
+
+                    <div class="form-group">
+                        <label for="name" class="block text-lg font-semibold mb-2">
+                            <span class="number text-light-accent mr-3">01</span> What's your name?
+                        </label>
+                        <input type="text" id="name" name="name"
+                                class="form-input text-2xl font-semibold bg-transparent"
+                               placeholder="John Doe *"
+                               required
+                               minlength="2">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="block text-lg font-semibold mb-2">
+                            <span class="number text-light-accent mr-3">02</span> What's your email?
+                        </label>
+                        <input type="email" id="email" name="email"
+                                class="form-input text-2xl font-semibold bg-transparent"
+                               placeholder="john@doe.com *"
+                               required
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organization" class="block text-lg font-semibold mb-2">
+                            <span class="number text-light-accent mr-3">03</span> What's the name of your organization?
+                        </label>
+                        <input type="text" id="organization" name="organization"
+                                class="form-input text-2xl font-semibold bg-transparent"
+                               placeholder="John & Doe ®">
+                        </div>
+
+                    <div class="form-group">
+                        <label for="message" class="block text-lg font-semibold mb-2">
+                            <span class="number text-light-accent mr-3">04</span> Tell us about your project.
+                        </label>
+                        <textarea
+                            class="single-line-textarea text-2xl font-semibold bg-transparent"
+                            id="message"
+                            name="message"
+                            rows="1"
+                            placeholder="Type your message here..."
+                            required
+                            minlength="10"></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="bg-light-text text-light-bg px-8 py-4 rounded-lg font-bold text-lg hover:bg-black hover:text-white transition duration-300 submit-button">Send Message</button>
+
+                </form>
+            </div>
+
+<aside class="details-section lg:col-span-1 space-y-10 lg:pt-2">
+
+                <div class="contact-details">
+                    <h3 class="text-xs text-light-placeholder uppercase font-extrabold tracking-widest mb-3">CONTACT DETAILS</h3>
+                    <p class="text-light-text">joannajyw06@gmail.com</p>
+                    <p class="text-light-text">+1 650 888 6518</p>
+                </div>
+
+                <div class="business-details">
+                    <h3 class="text-xs text-light-placeholder uppercase font-extrabold tracking-widest mb-3">BUSINESS DETAILS</h3>
+                    <p class="text-light-text">Location: Los Angeles, CA</p>
+                </div>
+
+                <div class="socials">
+                    <h3 class="text-xs text-light-placeholder uppercase font-extrabold tracking-widest mb-3">SOCIALS</h3>
+                    <p><a href="https://www.linkedin.com/in/joanna-wang-312a3a381/" target="_blank" class="text-light-text hover:text-light-placeholder transition">LinkedIn</a></p>
+                    <p><a href="#" class="text-light-text hover:text-light-placeholder transition">Instagram</a></p>
+                </div>
+            </aside>
+
+        <footer class="text-center py-6 text-light-placeholder border-t border-light-border mt-10">
+            <p>© 2025 Joanna Wang</p>
+        </footer>
+        
+    </div>
+</main>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
