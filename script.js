@@ -131,9 +131,43 @@ $(document).ready(function(){
             let isEmailValid = validateEmail();
             let isMessageValid = validateMessage();
             if (isNameValid && isEmailValid && isMessageValid) {
-                $(this).fadeOut(300, function() {
-                    $("#form-success").fadeIn(300);
-                });
+                const form = this;
+                const actionUrl = form.action;
+                const formData = new FormData(form);
+                fetch(actionUrl, {
+                    method: "POST",
+                    body: formData,
+                    headers: { "Accept": "application/json" }
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("Form submission failed");
+                        }
+                        $(form).fadeOut(300, function() {
+                            $("#form-success").fadeIn(300);
+                        });
+                    })
+                    .catch(() => {
+                        alert("Message could not be sent. Please try again or email directly.");
+                    });
+            }
+        });
+
+        $(".copy-email").on("click", function(event) {
+            event.preventDefault();
+            const email = $(this).data("copy");
+            if (!email) {
+                return;
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email);
+            } else {
+                const tempInput = document.createElement("input");
+                tempInput.value = email;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
             }
         });
     }
@@ -147,17 +181,6 @@ $(document).ready(function(){
     // --- 6. HOME PAGE: Smooth Scroll for In-Page Arrow ---
     const $homeMain = $("body.home-page main");
     if ($homeMain.length > 0) {
-        let snapRestoreTimer = null;
-        $homeMain.on("wheel", function() {
-            if (snapRestoreTimer) {
-                clearTimeout(snapRestoreTimer);
-            }
-            this.style.scrollSnapType = "none";
-            snapRestoreTimer = setTimeout(() => {
-                this.style.scrollSnapType = "";
-            }, 200);
-        });
-
         $(".scroll-down").on("click", function(event) {
             event.preventDefault();
             const targetId = $(this).data("target");

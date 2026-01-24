@@ -24,7 +24,7 @@
                     colors: {
                         'light-bg': '#dcd3c4',       
                         'light-text': '#2c2c2c',     
-                        'light-accent': '#007bff', 
+                        'light-accent': '#e54107', 
                         'light-placeholder': '#a0a0a0', 
                         'light-border': '#cccccc',   
                     }
@@ -55,10 +55,7 @@
     <div class="container max-w-6xl mx-auto px-6 lg:px-10">
 
         <header class="flex justify-between items-center py-16 border-b border-light-border mb-12">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight max-w-4xl">Let's start a project together</h1>
-            <div class="profile-pic flex-shrink-0">
-                <img src="https://placehold.co/60x60/cccccc/2c2c2c?text=JW" alt="Profile Picture" class="w-16 h-16 rounded-full object-cover">
-            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight max-w-4xl">Let’s connect</h1>
         </header>
 
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 pb-20">
@@ -70,57 +67,54 @@
                     <p class="text-xl text-light-text mt-4">Your message has been sent successfully. I'll get back to you soon.</p>
                 </div>
 
-                <form id="contactForm" action="#" method="POST" class="space-y-10">
+                <form id="contactForm" action="https://formspree.io/f/mlgjowpo" method="POST" class="space-y-10">
 
                     <div class="form-group">
-                        <label for="name" class="block text-lg font-semibold mb-2">
-                            <span class="number text-light-accent mr-3">01</span> What's your name?
+                        <label for="name" class="block text-lg font-medium mb-2">
+                            <span class="number text-light-accent mr-3">01</span> Your name
                         </label>
                         <input type="text" id="name" name="name"
-                                class="form-input text-2xl font-semibold bg-transparent"
-                               placeholder="John Doe *"
+                                class="form-input text-2xl font-normal bg-transparent"
                                required
                                minlength="2">
                         <span class="error-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="email" class="block text-lg font-semibold mb-2">
-                            <span class="number text-light-accent mr-3">02</span> What's your email?
+                        <label for="email" class="block text-lg font-medium mb-2">
+                            <span class="number text-light-accent mr-3">02</span> Email
                         </label>
                         <input type="email" id="email" name="email"
-                                class="form-input text-2xl font-semibold bg-transparent"
-                               placeholder="john@doe.com *"
+                                class="form-input text-2xl font-normal bg-transparent"
                                required
                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                         <span class="error-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="organization" class="block text-lg font-semibold mb-2">
-                            <span class="number text-light-accent mr-3">03</span> What's the name of your organization?
+                        <label for="organization" class="block text-lg font-medium mb-2">
+                            <span class="number text-light-accent mr-3">03</span> Company or team
                         </label>
                         <input type="text" id="organization" name="organization"
-                                class="form-input text-2xl font-semibold bg-transparent"
-                               placeholder="John & Doe ®">
+                                class="form-input text-2xl font-normal bg-transparent"
+                               >
                         </div>
 
                     <div class="form-group">
-                        <label for="message" class="block text-lg font-semibold mb-2">
-                            <span class="number text-light-accent mr-3">04</span> Tell us about your project.
+                        <label for="message" class="block text-lg font-medium mb-2">
+                            <span class="number text-light-accent mr-3">04</span> Role or opportunity details
                         </label>
                         <textarea
-                            class="single-line-textarea text-2xl font-semibold bg-transparent"
+                            class="single-line-textarea text-2xl font-normal bg-transparent"
                             id="message"
                             name="message"
                             rows="1"
-                            placeholder="Type your message here..."
                             required
                             minlength="10"></textarea>
                         <span class="error-message"></span>
                     </div>
 
-                    <button type="submit" class="bg-light-text text-light-bg px-8 py-4 rounded-lg font-bold text-lg hover:bg-black hover:text-white transition duration-300 submit-button">Send Message</button>
+                    <button type="submit" class="bg-light-text text-light-bg px-8 py-4 rounded-lg font-semibold text-lg hover:bg-black hover:text-white transition duration-300 submit-button">Send Message</button>
 
                 </form>
             </div>
@@ -128,24 +122,26 @@
 <aside class="details-section lg:col-span-1 space-y-10 lg:pt-2">
 
                 <div class="contact-details">
-                    <h3 class="text-xs text-light-placeholder uppercase font-extrabold tracking-widest mb-3">CONTACT DETAILS</h3>
-                    <p class="text-light-text">joannajyw06@gmail.com</p>
+                    <h3 class="text-xs text-light-placeholder uppercase font-semibold tracking-widest mb-3">CONTACT DETAILS</h3>
+                    <p class="text-light-text">
+                        <a href="#" class="text-light-text hover:text-light-placeholder transition copy-email" data-copy="jwang598@usc.edu">jwang598@usc.edu</a>
+                    </p>
                     <p class="text-light-text">+1 650 888 6518</p>
                 </div>
 
                 <div class="business-details">
-                    <h3 class="text-xs text-light-placeholder uppercase font-extrabold tracking-widest mb-3">BUSINESS DETAILS</h3>
-                    <p class="text-light-text">Location: Los Angeles, CA</p>
+                    <h3 class="text-xs text-light-placeholder uppercase font-semibold tracking-widest mb-3">LOCATION</h3>
+                    <p class="text-light-text">Los Angeles, CA</p>
                 </div>
 
                 <div class="socials">
-                    <h3 class="text-xs text-light-placeholder uppercase font-extrabold tracking-widest mb-3">SOCIALS</h3>
+                    <h3 class="text-xs text-light-placeholder uppercase font-semibold tracking-widest mb-3">SOCIALS</h3>
                     <p><a href="https://www.linkedin.com/in/joanna-wang-312a3a381/" target="_blank" class="text-light-text hover:text-light-placeholder transition">LinkedIn</a></p>
                     <p><a href="#" class="text-light-text hover:text-light-placeholder transition">Instagram</a></p>
                 </div>
             </aside>
 
-        <footer class="text-center py-6 text-light-placeholder border-t border-light-border mt-10">
+        <footer class="site-footer">
             <p>© 2025 Joanna Wang</p>
         </footer>
         

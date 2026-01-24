@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
 }
 
 html,
@@ -43,7 +44,7 @@ main {
 body.home-page main {
     height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: none;
     scroll-padding-top: 0;
     -webkit-overflow-scrolling: touch;
 }
@@ -73,6 +74,14 @@ footer {
     padding: 2rem;
     background-color: transparent;
     color: #555;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    color: #a0a0a0;
+    border-top: 1px solid #e0e0e0;
+    background-color: #ffffff;
 }
 
 
@@ -160,7 +169,7 @@ footer {
 
 .home-page .home-section {
     min-height: 100vh;
-    scroll-snap-align: start;
+    scroll-snap-align: none;
     scroll-snap-stop: normal;
 }
 
@@ -927,7 +936,8 @@ footer {
 .contact-page {
   background-color: #ffffff;
   color: #333;
-  font-family: "Futura PT", "Futura", "Century Gothic", "Avenir", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Inter", "Futura PT", "Futura", "Century Gothic", "Avenir", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
 }
 .contact-page .page-header {
   border-color: #e0e0e0 !important;
@@ -966,7 +976,7 @@ footer {
   color: var(--dark-brown);
 }
 .contact-page .number {
-  color: #0066cc;
+  color: var(--accent-orange);
 }
 .contact-page .form-input,
 .contact-page .single-line-textarea {
@@ -1037,6 +1047,12 @@ footer {
 }
 .contact-page .details-section a:hover {
   color: var(--dark-brown);
+}
+.contact-page .contact-details p {
+  line-height: 1.8;
+}
+.contact-page .copy-email {
+  cursor: pointer;
 }
 
 .contact-page footer {
