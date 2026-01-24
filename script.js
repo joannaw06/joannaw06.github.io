@@ -159,7 +159,33 @@ $(document).ready(function(){
             }
             const mainEl = $homeMain.get(0);
             const targetOffset = target.offsetTop;
-            mainEl.scrollTo({ top: targetOffset, behavior: "smooth" });
+            const startOffset = mainEl.scrollTop;
+            const distance = targetOffset - startOffset;
+            const duration = 1500;
+            const startTime = performance.now();
+            const previousSnap = mainEl.style.scrollSnapType;
+            const previousBehavior = mainEl.style.scrollBehavior;
+            mainEl.style.scrollSnapType = "none";
+            mainEl.style.scrollBehavior = "auto";
+
+            function easeOutQuint(t) {
+                return 1 - Math.pow(1 - t, 5);
+            }
+
+            function step(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeOutQuint(progress);
+                mainEl.scrollTop = startOffset + distance * eased;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    mainEl.style.scrollSnapType = previousSnap || "";
+                    mainEl.style.scrollBehavior = previousBehavior || "";
+                }
+            }
+
+            requestAnimationFrame(step);
         });
     }
 
