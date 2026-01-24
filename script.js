@@ -147,6 +147,17 @@ $(document).ready(function(){
     // --- 6. HOME PAGE: Smooth Scroll for In-Page Arrow ---
     const $homeMain = $("body.home-page main");
     if ($homeMain.length > 0) {
+        let snapRestoreTimer = null;
+        $homeMain.on("wheel", function() {
+            if (snapRestoreTimer) {
+                clearTimeout(snapRestoreTimer);
+            }
+            this.style.scrollSnapType = "none";
+            snapRestoreTimer = setTimeout(() => {
+                this.style.scrollSnapType = "";
+            }, 200);
+        });
+
         $(".scroll-down").on("click", function(event) {
             event.preventDefault();
             const targetId = $(this).data("target");
