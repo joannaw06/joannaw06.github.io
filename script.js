@@ -144,4 +144,23 @@ $(document).ready(function(){
         $(".nav-menu").toggleClass("nav-active");
     });
 
+    // --- 6. HOME PAGE: Smooth Scroll for In-Page Arrow ---
+    const $homeMain = $("body.home-page main");
+    if ($homeMain.length > 0) {
+        $(".scroll-down").on("click", function(event) {
+            event.preventDefault();
+            const targetId = $(this).data("target");
+            if (!targetId) {
+                return;
+            }
+            const target = document.querySelector(targetId);
+            if (!target) {
+                return;
+            }
+            const mainEl = $homeMain.get(0);
+            const targetOffset = target.offsetTop;
+            mainEl.scrollTo({ top: targetOffset, behavior: "smooth" });
+        });
+    }
+
 });

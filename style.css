@@ -7,10 +7,24 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body.home-page {
+    overflow: hidden;
+}
+
 :root {
     --dark-brown: #2e2b2a;
     --light-brown: #e7e7e7;
     --airnest-green: #388E3C;
+    --accent-orange: #e54107;
 }
 
 body {
@@ -23,6 +37,14 @@ body {
 
 main {
     padding-top: 0px;
+}
+
+body.home-page main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 0;
+    -webkit-overflow-scrolling: touch;
 }
 
 h1,
@@ -135,19 +157,14 @@ footer {
     text-align: center;
 }
 
+.home-page .home-section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 .home-page .intro::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; 
-    background-image: url(images/home.jpg?v=2);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: block;
+    content: none;
 }
 
 /* --- Light Mode Overrides (for .home-page) --- */
@@ -178,31 +195,98 @@ footer {
 
 /* Hero Content */
 .home-page .intro-content {
-    padding-bottom: 60px; 
-    text-align: center;
-    position: relative;
+    padding-bottom: 0; 
+    text-align: left;
+    position: absolute;
+    left: calc(55% + 20px);
+    bottom: 63px;
+    transform: none;
     z-index: 1;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-page .hero-layout {
+    width: min(1200px, 94%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 420px;
+}
+
+.home-page .hero-image {
+    flex: 0 0 55%;
+    display: flex;
+    justify-content: flex-start;
+    overflow: visible;
+}
+
+.home-page .hero-image img {
+    width: 200%;
+    height: auto;
+    display: block;
+    max-width: 1150px;
+    transform: translateX(-8%);
+}
+
+.home-page .scroll-down {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(46, 43, 42, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    appearance: none;
+    cursor: pointer;
+}
+.home-page .scroll-down:hover {
+    transform: translateX(-50%) translateY(2px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.home-page .scroll-down__arrow {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--dark-brown);
+    border-bottom: 2px solid var(--dark-brown);
+    transform: rotate(45deg);
 }
 .home-page .intro-content p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1.7;
     color: #333 !important;
     margin-bottom: 2rem;
-    max-width: 75ch;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 20px 30px;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
+    margin-top: 12px;
+    max-width: 520px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    backdrop-filter: none;
 }
 .home-page .intro-content p strong {
     font-weight: 600;
 }
+.home-page .accent-orange {
+    color: var(--accent-orange);
+    font-weight: normal;
+}
 .home-page .intro-links {
     display: flex;
-    justify-content: center; 
-    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; 
+    gap: 10px;
 }
 .home-page .intro-link {
     color: var(--dark-brown);
@@ -214,23 +298,64 @@ footer {
     border-radius: 5px;
     transition: all 0.3s ease;
 }
+.home-page .intro-link--stacked {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+    border: none;
+}
+.home-page .intro-link--stacked .link-arrow {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--dark-brown);
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 1;
+}
 .home-page .intro-link:hover {
-    background-color: var(--dark-brown);
-    color: #ffffff;
+    background-color: transparent;
+    color: var(--accent-orange);
     border-color: var(--dark-brown);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.home-page .intro-link--stacked:hover {
+    background-color: transparent;
+    box-shadow: none;
+}
+.home-page .intro-link--stacked:hover .link-arrow {
+    background-color: var(--dark-brown);
+    color: #ffffff;
+}
+.home-page .intro-link--stacked:hover span:last-child {
+    color: var(--accent-orange);
 }
 
 /* Main Content Wrapper */
 .home-page .main-content-wrapper {
-    padding: 80px 50px; 
+    padding: 120px 50px; 
     max-width: 1200px; 
     margin: 0 auto; 
-    margin-top: -100px; 
+    margin-top: 0; 
     position: relative; 
     z-index: 2; 
     box-shadow: none; 
     border-radius: 0; 
+    display: flex;
+    align-items: center;
+}
+
+.home-page .home-details {
+    width: 100%;
+}
+
+.home-page .home-details .lead {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: #555;
 }
 .home-page .main-content-wrapper h2 {
     color: var(--dark-brown);
@@ -1002,7 +1127,7 @@ footer {
 
     /* Home Page */
     .home-page section.intro {
-        min-height: 60vh; 
+        min-height: 100vh; 
         overflow-x: scroll; 
         -ms-overflow-style: none; 
         scrollbar-width: none; 
@@ -1013,9 +1138,31 @@ footer {
     .home-page .intro::before {
         width: calc(60vh * 1.7778); 
     }
+    .home-page .hero-layout {
+        flex-direction: column;
+        text-align: center;
+        min-height: 0;
+    }
+    .home-page .intro-content {
+        text-align: center;
+        position: static;
+        transform: none;
+        max-width: 100%;
+    }
+    .home-page .intro-links {
+        justify-content: center;
+    }
+    .home-page .hero-image img {
+        width: 100%;
+        max-width: 520px;
+        transform: none;
+    }
+    .home-page .hero-image {
+        justify-content: center;
+    }
     .home-page .main-content-wrapper {
-        padding: 40px 20px;
-        margin-top: -50px; 
+        padding: 80px 20px;
+        margin-top: 0; 
     }
     .home-page .info-grid {
         grid-template-columns: 1fr; 
