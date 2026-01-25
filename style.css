@@ -684,7 +684,7 @@ footer {
    3.1 CASE STUDY: MISUNDERSTOOD
 ===================================================== */
 .case-study-page {
-  background-color: #faf7f0;
+  background-color: #F1EBD8;
   color: #333;
   font-family: "IBM Plex Sans", "Inter", "Futura PT", "Futura", "Century Gothic", "Avenir", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
@@ -711,6 +711,10 @@ footer {
   position: relative;
   z-index: 1;
 }
+.case-section--image-tight {
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+}
 .case-section--image-full {
   width: 100vw;
   max-width: none;
@@ -721,6 +725,13 @@ footer {
   position: relative;
   top: -100px !important;
   transform: translateX(-50%) !important;
+}
+.case-section--image-full.case-shift-up-200 {
+  top: -250px !important;
+}
+.case-section--image-full.case-shift-up-150 {
+  position: relative;
+  top: -350px !important;
 }
 .case-study-page--immersive .case-section--image {
   padding: 80px 0 !important;
@@ -734,7 +745,7 @@ footer {
   display: none;
 }
 .case-section__image {
-  width: 100%;
+  width: 95%;
   max-width: 100%;
   height: auto;
   object-fit: contain;
@@ -743,6 +754,70 @@ footer {
   position: relative;
   transform: translateY(-100px) !important;
   z-index: 1;
+}
+.case-section--image-full .case-section__image {
+  z-index: 0;
+}
+.case-section__image--down {
+  transform: translateY(0) !important;
+}
+.case-section--image-full img[src*="mis-section3"] {
+  transform: translateY(0) !important;
+}
+.case-section__heading {
+  max-width: 1100px;
+  margin: 0 auto 0;
+  padding: 0 5rem;
+  position: relative;
+  top: -30px;
+  left: -80px;
+}
+.case-section__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--dark-brown);
+  margin: 0;
+}
+.case-section__label {
+  max-width: 1100px;
+  margin: 30px auto 15px;
+  padding: 0 5rem;
+  position: relative;
+  left: -80px;
+  z-index: 3;
+}
+.case-section--with-label {
+  position: relative;
+}
+.case-section__label--overlay {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5rem;
+  transform: translateX(-80px);
+  z-index: 5;
+}
+.case-section__label--tight {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.case-section__label--map {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 3;
+  top: -115px;
+}
+.case-section__label-text {
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--dark-brown);
+  margin: 0;
+}
+.case-section--image-full .case-section__image {
+  transform: translateY(0) !important;
 }
 .case-interstitial {
   max-width: 1100px;
@@ -773,7 +848,7 @@ footer {
   margin-top: 18px;
 }
 .case-interstitial__emphasis {
-  color: var(--accent-orange);
+  color: #346F10;
   margin: 4px 0;
 }
 .case-shift-up-140 {
@@ -781,6 +856,12 @@ footer {
 }
 .case-shift-up-100 {
   transform: translateY(-100px);
+}
+.case-shift-up-200 {
+  transform: translateY(-200px);
+}
+.case-shift-up-150 {
+  transform: translateY(-150px);
 }
 .case-interstitial__text {
   font-family: "DM Serif Text", "Times New Roman", serif;
@@ -790,7 +871,7 @@ footer {
   margin: 0;
 }
 .case-interstitial__emphasis {
-  color: var(--accent-orange);
+  color: #346F10;
 }
 .case-section h2 {
   font-size: 32px;
@@ -862,8 +943,8 @@ footer {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .case-hero__link:hover {
-  color: var(--accent-orange);
-  border-bottom-color: var(--accent-orange);
+  color: #346F10;
+  border-bottom-color: #346F10;
 }
 .case-study-page--immersive .case-section {
   max-width: 1100px;
@@ -1053,6 +1134,19 @@ footer {
 }
 .case-section--journey .case-section__inner {
   padding-top: 28px;
+}
+.case-section--journey {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+.case-section--journey .case-section__inner {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100% !important;
 }
 .case-section--journey .case-journey__content {
   margin-top: -10px !important;
