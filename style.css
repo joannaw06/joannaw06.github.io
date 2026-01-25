@@ -741,6 +741,11 @@ footer {
   transform: translateX(-50%) !important;
   max-width: none !important;
 }
+.case-study-page--immersive .case-section:last-of-type {
+  min-height: auto;
+  padding-bottom: 0;
+  margin-bottom: -300px;
+}
 .case-study-page--immersive .site-footer {
   display: none;
 }
@@ -764,6 +769,9 @@ footer {
 .case-section--image-full img[src*="mis-section3"] {
   transform: translateY(0) !important;
 }
+.case-section--image-full .case-section__image--section2-up {
+  transform: translateY(-50px) !important;
+}
 .case-section__heading {
   max-width: 1100px;
   margin: 0 auto 0;
@@ -777,6 +785,23 @@ footer {
   font-weight: 700;
   color: var(--dark-brown);
   margin: 0;
+}
+.case-title-highlight {
+  display: inline-block;
+  font-family: "DM Serif Text", "Times New Roman", serif;
+  color: #ffffff;
+  background-color: #2f7a1f;
+  padding: 2px 6px;
+  line-height: 1.05;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.case-title-highlight--feature {
+  transform: translateX(-5px);
+}
+.case-title-highlight--white {
+  color: #ffffff;
 }
 .case-section__label {
   max-width: 1100px;
@@ -800,6 +825,14 @@ footer {
   transform: translateX(-80px);
   z-index: 5;
 }
+.case-section__label--quiz {
+  top: 120px;
+  z-index: 6;
+}
+.case-section__label--rewards {
+  top: 40px;
+  z-index: 6;
+}
 .case-section__label--tight {
   margin-top: 30px;
   margin-bottom: 15px;
@@ -808,7 +841,11 @@ footer {
   margin-bottom: 20px;
   position: relative;
   z-index: 3;
-  top: -115px;
+  top: -95px;
+}
+.case-section__label--micro {
+  top: 10px;
+  transform: translateX(-6px);
 }
 .case-section__label-text {
   font-size: 23px;
@@ -877,6 +914,9 @@ footer {
   font-size: 32px;
   margin-bottom: 24px;
   color: var(--dark-brown);
+}
+.case-section h2.case-title-highlight {
+  color: #ffffff;
 }
 .case-eyebrow {
   text-transform: uppercase;
@@ -1166,6 +1206,7 @@ footer {
 }
 .case-section--journey .journey-title {
   font-size: 0.98rem;
+  transform: translateX(-6px);
 }
 .case-section--journey .journey-outcome {
   font-size: 0.9rem;
