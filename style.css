@@ -10,6 +10,7 @@
 html {
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
+    overflow-x: hidden;
 }
 
 html,
@@ -35,6 +36,7 @@ body {
     background-color: #F3F3F2; 
     color: #333; 
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 main {
@@ -751,33 +753,110 @@ footer {
 }
 .thrive-page {
   background-color: #f0f1f2;
-}
-.thrive-page .case-study {
-  max-width: 100%;
-  padding: 0;
-}
-.thrive-page .case-hero--full {
-  min-height: auto;
-  padding: 0;
-}
-.thrive-hero-container {
+  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  gap: 39px;
-  padding: 14px 32px;
+}
+.thrive-page .case-study {
+  display: block !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.thrive-page .case-hero--full {
+  display: block !important;
+  width: 100% !important;
+  max-width: 1440px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+}
+.thrive-page .case-hero--full img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 1. 针对该页面的全局容器设置：禁止横向滚动 */
+#thrive-special-layout {
+    width: 100%;
+    overflow-x: hidden; /* 杀掉多余的横向滚动条 */
+    margin: 0;
+    padding: 0;
+    display: block; /* 确保 body 是块级 */
+}
+
+/* 2. 针对该页面的内容主容器：强制居中 */
+#thrive-special-layout .case-study,
+#thrive-special-layout .main-content {
+    width: 100%;
+    max-width: 100%; /* 允许子元素全宽 */
+    margin: 0;
+    padding: 0;
+    display: block; /* 移除任何 Flex 干扰 */
+}
+
+/* 3. 针对 Hero 大图区域：核心修复 */
+#thrive-special-layout .case-hero--full {
+    /* 盒子模型 */
+    box-sizing: border-box;
+    display: block;
+    
+    /* 尺寸与位置 */
+    width: 100%;
+    max-width: 1440px; /* 你想要的最大宽度 */
+    margin: 0 auto;    /* 上下0，左右自动（完美居中） */
+    padding: 0 20px;   /* 左右留白呼吸感 */
+    
+    /* 清除干扰 */
+    float: none;
+    left: auto;
+    right: auto;
+}
+
+/* 4. 确保图片自适应 */
+#thrive-special-layout .case-hero--full img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.thrive-hero-container {
+  width: 120%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: #f0f1f2;
   overflow: hidden;
+}
+@media (max-width: 640px) {
+  .thrive-hero-container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .thrive-hero-image {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 .thrive-hero-text {
-  width: auto;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
   color: #5d4a73;
   font-size: 16px;

@@ -13,13 +13,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="case-study-page case-study-page--immersive thrive-page">
+<body id="thrive-special-layout" class="case-study-page case-study-page--immersive thrive-page">
+
     <main class="case-study">
-        <section class="case-hero case-hero--full case-section">
-            <div class="thrive-hero-container">
-                <img src="images/thrive/hero.png" alt="Thrive hero" class="thrive-hero-image">
-                <div class="thrive-hero-text">This page is currently under construction.<br>Check back soon :)</div>
-            </div>
+        <section class="case-hero case-hero--full case-section" style="width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 20px; display: block; box-sizing: border-box; overflow: hidden;">
+<div style="
+    display: block !important;
+    width: 100% !important;
+    max-width: 1280px !important;
+    margin-top: 60px !important;  /* 这里控制顶部距离，觉得太宽可以改小，比如 60px */
+    margin-bottom: 60px !important; /* 底部也留点空间 */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    text-align: center !important; /* 让下面的文字也居中 */
+">
+    <img src="images/thrive/hero.png" 
+         alt="Thrive App Hero" 
+         style="
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+            max-width: 100% !important;
+            margin: 0 auto !important; /* 图片自身居中 */
+            border: none !important;
+            box-shadow: none !important;
+         ">
+
+    <p style="
+        font-family: sans-serif; /* 或者用你网站的默认字体 */
+        font-size: 18px;
+        color: #492e6d; 
+        margin-top: 40px !important; /* 文字和图片的距离 */
+        line-height: 1.6;
+    ">
+        This page is currently under construction.<br>
+        Check back soon :)
+    </p>
+</div>
         </section>
     </main>
 
