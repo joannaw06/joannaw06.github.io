@@ -749,6 +749,42 @@ footer {
 .case-study-page--immersive .site-footer {
   display: none;
 }
+.thrive-page {
+  background-color: #f0f1f2;
+}
+.thrive-page .case-study {
+  max-width: 100%;
+  padding: 0;
+}
+.thrive-page .case-hero--full {
+  min-height: auto;
+  padding: 0;
+}
+.thrive-hero-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 39px;
+  padding: 14px 32px;
+  background-color: #f0f1f2;
+  overflow: hidden;
+}
+.thrive-hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.thrive-hero-text {
+  width: auto;
+  text-align: center;
+  color: #5d4a73;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Montserrat", "Inter", sans-serif;
+  line-height: 1.25;
+}
 .case-section__image {
   width: 95%;
   max-width: 100%;
@@ -914,6 +950,12 @@ footer {
   font-size: 32px;
   margin-bottom: 24px;
   color: var(--dark-brown);
+}
+.coming-soon {
+  font-size: 20px;
+  color: var(--dark-brown);
+  text-align: center;
+  margin: 0 auto 40px;
 }
 .case-section h2.case-title-highlight {
   color: #ffffff;
