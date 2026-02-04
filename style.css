@@ -33,7 +33,7 @@ body {
     font-family: "Inter", "Futura PT", "Futura", "Century Gothic", "Avenir", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
     line-height: 1.6; 
-    background-color: #F3F3F2; 
+    background-color: #EEEBF1; 
     color: #333; 
     overflow-y: scroll;
     overflow-x: hidden;
@@ -752,7 +752,7 @@ footer {
   display: none;
 }
 .thrive-page {
-  background-color: #f0f1f2;
+  background-color: #EEEBF1;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -778,6 +778,99 @@ footer {
   width: 100%;
   height: auto;
   display: block;
+}
+
+
+/* Thrive: Background Section */
+.thrive-background {
+  width: 100%;
+  background-color: #eeebf1;
+  padding: 0;
+  align-items: stretch;
+  min-height: 100vh;
+}
+.thrive-background__canvas {
+  width: 100%;
+  max-width: 1440px;
+  height: 100vh;
+  min-height: 832px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #eeebf1;
+  overflow: hidden;
+}
+.thrive-background__title {
+  position: absolute;
+  left: 128px;
+  top: 40px;
+  text-align: center;
+  color: #5a189a;
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 36.45px;
+  margin: 0;
+}
+.thrive-background__intro {
+  position: absolute;
+  left: 128px;
+  top: 98px;
+  width: 1185px;
+  color: #5a189a;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21.6px;
+  margin: 0;
+}
+.thrive-background__left {
+  position: absolute;
+  left: 128px;
+  top: 179px;
+  width: 468px;
+  color: #5a189a;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin: 0;
+}
+.thrive-background__right {
+  position: absolute;
+  left: 728px;
+  top: 179px;
+  width: 587px;
+  color: #5a189a;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin: 0;
+}
+.thrive-background__image {
+  position: absolute;
+  display: block;
+  border: 0;
+}
+.thrive-background__image--left {
+  width: 468px;
+  height: 409px;
+  left: 128px;
+  top: 252px;
+}
+.thrive-background__image--right {
+  width: 589px;
+  height: 409px;
+  left: 723px;
+  top: 255px;
+}
+.thrive-background__closing {
+  position: absolute;
+  left: 128px;
+  top: 690px;
+  width: 1184px;
+  text-align: center;
+  color: #5a189a;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
 }
 
 /* 1. 针对该页面的全局容器设置：禁止横向滚动 */
